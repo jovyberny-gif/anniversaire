@@ -1,0 +1,29 @@
+# --- SYSTEM FILES ---
+.DS_Store
+Thumbs.db
+*.log
+
+# --- IDE FILES (VS Code, IntelliJ) ---
+.vscode/
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# --- BACKEND (Spring Boot / Maven) ---
+/backend/target/
+/backend/.mvn/
+/backend/mvnw
+/backend/mvnw.cmd
+/backend/.classpath
+/backend/.project
+/backend/.settings/
+
+# --- FRONTEND ---
+# Si vous utilisez plus tard des outils comme Vite ou Node.js pour le front
+node_modules/
+.env
+
+# --- TEMP FILES ---
+tmp/
+out/
