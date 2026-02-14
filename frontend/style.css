@@ -1,0 +1,234 @@
+/* --- VARIABLES ET CONFIGURATION --- */
+:root {
+    --bg-beige: #FFF8E7;    
+    --pink-color: #E08E8E;  
+    --text-black: #000000;
+    
+    /* Polices d'écriture */
+    --font-main: 'Verdana', sans-serif; 
+    --font-title: 'Comic Sans MS', 'Chalkboard SE', sans-serif; 
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-main);
+    box-sizing: border-box;
+    overflow-x: hidden; /* Empêche le défilement horizontal sur mobile */
+}
+
+/* ================= PAGE 1 : INDEX (Photo de groupe) ================= */
+.hero-container {
+    background-image: url('group.jpg'); 
+    background-size: cover;      
+    background-position: center; 
+    height: 100vh;               
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 20px; /* Ajout d'un peu de marge pour les petits écrans */
+}
+
+.hero-overlay {
+    background: rgba(0, 0, 0, 0.3); 
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+}
+
+.hero-content {
+    position: relative; 
+    z-index: 10; 
+    text-align: center;
+    width: 100%; /* S'assure que le contenu prend toute la largeur */
+}
+
+.main-title {
+    font-family: var(--font-title);
+    color: var(--pink-color);
+    font-size: 4rem; 
+    font-weight: bold;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); 
+    line-height: 1.2; /* Pour éviter que les lignes se chevauchent sur mobile */
+}
+
+.btn-suivant {
+    background-color: var(--pink-color);
+    color: var(--text-black);
+    padding: 15px 40px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 20px;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    transition: transform 0.2s;
+    display: inline-block; /* Important pour que le padding fonctionne bien */
+}
+
+.btn-suivant:hover {
+    transform: scale(1.05); 
+}
+
+/* ================= PAGE 2 : VOEUX (Beige) ================= */
+.page-voeux {
+    background-color: var(--bg-beige);
+    min-height: 100vh;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+}
+
+.split-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 50px;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    padding-top: 20px;
+}
+
+/* --- Colonne Gauche --- */
+.left-column {
+    flex: 1; 
+}
+
+.title-voeux {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 30px;
+    color: var(--text-black);
+}
+
+.wishes-list {
+    list-style: none; 
+    padding: 0;
+    font-size: 1.2rem;
+    line-height: 1.6; 
+    font-weight: 500;
+}
+
+.wishes-list li {
+    margin-bottom: 15px;
+}
+
+/* --- Colonne Droite --- */
+.right-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+.balloons-img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    margin-bottom: 50px; 
+    object-fit: cover;
+}
+
+.btn-retour {
+    background-color: var(--pink-color);
+    color: var(--text-black);
+    font-size: 2.2rem; 
+    font-weight: 900;
+    text-decoration: none;
+    padding: 15px 80px; 
+    border-radius: 50px; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    display: inline-block;
+    transition: transform 0.2s;
+    text-align: center;
+}
+
+.btn-retour:hover {
+    transform: scale(1.05);
+}
+
+/* ================= FOOTER ================= */
+.team-footer {
+    text-align: right;
+    margin-top: 40px;
+    padding-right: 20px;
+}
+
+.team-footer h3 {
+    font-size: 1.1rem;
+    font-weight: 900;
+    margin-bottom: 10px;
+    color: var(--text-black);
+}
+
+.team-info p {
+    margin: 5px 0;
+    font-size: 1rem;
+    color: #333;
+}
+
+.role {
+    font-weight: normal;
+    color: #666; 
+    font-size: 0.85rem;
+}
+
+/* ============================================================ */
+/* ================= RESPONSIVE (MOBILE / TABLETTE) ========== */
+/* ============================================================ */
+
+@media screen and (max-width: 900px) {
+    
+    /* --- Page 1 : Titres plus petits --- */
+    .main-title {
+        font-size: 2.5rem; /* Réduit la taille du texte */
+        padding: 0 10px;   /* Ajoute une marge pour ne pas toucher les bords */
+    }
+
+    /* --- Page 2 : On empile les colonnes --- */
+    .page-voeux {
+        padding: 20px; /* Moins de marge autour */
+    }
+
+    .split-layout {
+        flex-direction: column; /* La gauche et la droite passent l'une sous l'autre */
+        gap: 30px;
+    }
+
+    .left-column, .right-column {
+        width: 100%; /* Prend toute la largeur */
+    }
+    
+    .title-voeux {
+        text-align: center; /* Centre le titre "Voeux" */
+        font-size: 2.5rem;
+    }
+
+    .balloons-img {
+        margin-bottom: 30px;
+        max-width: 100%; /* L'image s'adapte à l'écran */
+    }
+
+    /* --- Bouton Retour adapté --- */
+    .btn-retour {
+        font-size: 1.5rem; /* Texte plus petit */
+        padding: 15px 0;   /* Ajuste le padding */
+        width: 100%;       /* Bouton pleine largeur, facile à cliquer au doigt */
+        max-width: 300px;  /* Mais pas trop large non plus */
+    }
+
+    /* --- Footer Centré sur mobile --- */
+    .team-footer {
+        text-align: center;
+        padding-right: 0;
+        margin-top: 30px;
+    }
+}
