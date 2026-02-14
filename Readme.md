@@ -23,3 +23,17 @@ Ce projet consiste à créer un site d'anniversaire interactif où le contenu (n
 
 ```text
 [ Frontend : HTML/CSS/JS ]  <--->  [ Backend : Spring Boot API ]  <--->  [ Fichier : data.json ]
+
+
+
+---
+
+## 5️⃣ Spécifications de l'API (REST)
+
+### Modèle de données (`data.json`)
+```json
+{
+  "name": "Kamel",
+  "message": "Joyeux anniversaire ! 🎉",
+  "theme": "dark"
+}
